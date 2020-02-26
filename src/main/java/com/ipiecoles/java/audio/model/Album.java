@@ -1,14 +1,13 @@
 package com.ipiecoles.java.audio.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
 @Table(name = "Album")
-public /*abstract*/ class Album {
+public class Album {
 
     @Id
     @Column(name = "AlbumId")
@@ -78,9 +77,5 @@ public /*abstract*/ class Album {
     @Override
     public int hashCode() {
         return Objects.hash(id, title, artist);
-    }
-
-    public boolean isNullTitle() {
-        return title == null;
     }
 }

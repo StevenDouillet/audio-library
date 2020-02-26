@@ -1,6 +1,5 @@
 package com.ipiecoles.java.audio.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
@@ -77,13 +76,5 @@ public class Artist {
     @Override
     public int hashCode() {
         return Objects.hash(id, name, albums);
-    }
-
-    public boolean isNullName(){
-        return name == null;
-    }
-
-    public boolean isNullId(){
-        return name == null;
     }
 }

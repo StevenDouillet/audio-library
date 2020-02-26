@@ -6,6 +6,7 @@ import com.ipiecoles.java.audio.model.Album;
 import com.ipiecoles.java.audio.repository.AlbumRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.Assert;
 
 import java.util.Optional;
 
@@ -27,7 +28,7 @@ public class AlbumService {
 
     public Album addAlbum(Album album) {
 
-        if (album.isNullTitle() || album.getTitle().isEmpty()) {
+        if (album.getTitle() == null || album.getTitle().isEmpty()) {
             throw new NullPropertyException("Can't add album without title");
         }
 

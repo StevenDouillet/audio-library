@@ -55,7 +55,7 @@ public class ArtistService {
 
     public Artist addArtist(Artist artist) {
 
-        if (artist.isNullName() || artist.getName().isEmpty()) {
+        if (artist.getName() == null || artist.getName().isEmpty()) {
             throw new NullPropertyException("Can't add an album without name");
         }
 
@@ -83,11 +83,11 @@ public class ArtistService {
             throw new NotFoundException("Artist not found");
         }
 
-        if (artist.isNullName()) {
+        if (artist.getName() == null) {
             throw new IncorrectParameterException("Can't save artist without name");
         }
 
-        if (artist.isNullId()) {
+        if (artist.getName() == null) {
             throw new IncorrectParameterException("ID of artist JSON object is empty or null");
         }
 
